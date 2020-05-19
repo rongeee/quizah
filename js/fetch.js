@@ -238,10 +238,11 @@ const fetchProducts = () => {
     });
 };
 
-startBtn.addEventListener("click", () => {
+const start = () => {
   game.name = nameInput.value;
-
-  if (name !== "") {
+  if (game.name !== "") {
     fetchProducts();
   }
-});
+};
+
+// startBtn.addEventListener("click", () => {});

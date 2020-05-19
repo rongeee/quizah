@@ -88,7 +88,7 @@
             </ul>
           </div>
         </div>
-        <input type="button" value="Go!" class="quiz-setup__submit" />
+        <input type="button" value="Go!" class="quiz-setup__submit" onclick="start()" />
       </form>
     </section>
   </body>
