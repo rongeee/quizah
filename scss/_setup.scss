@@ -114,11 +114,10 @@
   &__input {
     display: none;
 
-    &:checked + .select-box__input-text {
-      display: block;
-    }
+    // &:checked + .select-box__input-text {
+    //   display: block;
+    // }
   }
-
   &__input-text {
     display: none;
     width: 100%;
@@ -126,6 +125,10 @@
     padding: 15px;
     background-color: $color__dark-sec;
     color: white;
+
+    &.chosen {
+      display: block;
+    }
   }
 
   &__list {

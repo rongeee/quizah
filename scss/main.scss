@@ -10,7 +10,9 @@ body {
   color: white;
   transition: opacity 0.5s;
   margin: 0 auto;
+  display: inline;
   font-family: pfs-bold;
   text-transform: uppercase;
-  padding: 3em;
+  box-sizing: border-box;
+  max-height: 100vh;
 }

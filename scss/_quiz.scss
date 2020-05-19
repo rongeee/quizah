@@ -6,9 +6,17 @@
   gap: 1em;
   max-width: 900px;
   margin: 0 auto;
+  padding: 1em;
+  max-height: 100vh;
+  box-sizing: border-box;
 
   &__category {
     text-align: center;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
   }
 
   &__question {
@@ -17,18 +25,24 @@
 
   &__question-text {
     text-align: center;
+    letter-spacing: 1px;
   }
 
   &__time {
     height: 10px;
     background-color: white;
+    width: 0%;
+
+    &--anim {
+      animation: progress 10s linear;
+    }
   }
 
   &__answers {
     display: grid;
     grid-template: 1fr 1fr / 1fr 1fr;
     gap: 1em;
-    max-height: 200px;
+    max-height: 400px;
   }
 
   &__answer {
@@ -39,5 +53,17 @@
     margin: 0; /* 2 */
     color: white;
     border: none;
+    min-height: 100px;
+  }
+}
+
+@keyframes progress {
+  from {
+    width: 100%;
+    background-color: white;
+  }
+  to {
+    width: 0%;
+    background-color: red;
   }
 }

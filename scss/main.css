@@ -197,10 +197,6 @@
   display: none;
 }
 
-.select-box__input:checked + .select-box__input-text {
-  display: block;
-}
-
 .select-box__input-text {
   display: none;
   width: 100%;
@@ -208,6 +204,10 @@
   padding: 15px;
   background-color: #86919a;
   color: white;
+}
+
+.select-box__input-text.chosen {
+  display: block;
 }
 
 .select-box__list {
@@ -304,10 +304,23 @@
   gap: 1em;
   max-width: 900px;
   margin: 0 auto;
+  padding: 1em;
+  max-height: 100vh;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .quiz__category {
   text-align: center;
+}
+
+.quiz__top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .quiz__question {
@@ -318,11 +331,18 @@
 
 .quiz__question-text {
   text-align: center;
+  letter-spacing: 1px;
 }
 
 .quiz__time {
   height: 10px;
   background-color: white;
+  width: 0%;
+}
+
+.quiz__time--anim {
+  -webkit-animation: progress 10s linear;
+          animation: progress 10s linear;
 }
 
 .quiz__answers {
@@ -332,7 +352,7 @@
   -ms-grid-columns: 1fr 1fr;
       grid-template: 1fr 1fr / 1fr 1fr;
   gap: 1em;
-  max-height: 200px;
+  max-height: 400px;
 }
 
 .quiz__answer {
@@ -350,12 +370,35 @@
   /* 2 */
   color: white;
   border: none;
+  min-height: 100px;
 }
 
 .quiz__answer:hover, .quiz__answer:focus {
   background-color: #3e9fe9;
   -webkit-transition: 200ms;
   transition: 200ms;
+}
+
+@-webkit-keyframes progress {
+  from {
+    width: 100%;
+    background-color: white;
+  }
+  to {
+    width: 0%;
+    background-color: red;
+  }
+}
+
+@keyframes progress {
+  from {
+    width: 100%;
+    background-color: white;
+  }
+  to {
+    width: 0%;
+    background-color: red;
+  }
 }
 
 body {
@@ -365,8 +408,11 @@ body {
   -webkit-transition: opacity 0.5s;
   transition: opacity 0.5s;
   margin: 0 auto;
+  display: inline;
   font-family: pfs-bold;
   text-transform: uppercase;
-  padding: 3em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  max-height: 100vh;
 }
 /*# sourceMappingURL=main.css.map */
