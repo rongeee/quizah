@@ -1,0 +1,43 @@
+.quiz {
+  display: grid;
+  grid-template-rows: auto 1fr auto 1fr;
+  height: 100vh;
+  align-content: center;
+  gap: 1em;
+  max-width: 900px;
+  margin: 0 auto;
+
+  &__category {
+    text-align: center;
+  }
+
+  &__question {
+    align-self: center;
+  }
+
+  &__question-text {
+    text-align: center;
+  }
+
+  &__time {
+    height: 10px;
+    background-color: white;
+  }
+
+  &__answers {
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr;
+    gap: 1em;
+    max-height: 200px;
+  }
+
+  &__answer {
+    @include btn;
+    font-family: inherit; /* 1 */
+    font-size: 100%; /* 1 */
+    line-height: 1.15; /* 1 */
+    margin: 0; /* 2 */
+    color: white;
+    border: none;
+  }
+}

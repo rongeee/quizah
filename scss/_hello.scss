@@ -1,0 +1,19 @@
+.hello {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  &__name {
+    font-size: 2.5rem;
+  }
+
+  &__ready {
+    font-size: 1.5rem;
+  }
+
+  &__timer {
+    font-size: 4rem;
+  }
+}

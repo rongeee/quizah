@@ -1,0 +1,16 @@
+@import "variables";
+@import "index";
+@import "setup";
+@import "hello";
+@import "quiz";
+
+body {
+  opacity: 0;
+  background-color: $color__dark;
+  color: white;
+  transition: opacity 0.5s;
+  margin: 0 auto;
+  font-family: pfs-bold;
+  text-transform: uppercase;
+  padding: 3em;
+}

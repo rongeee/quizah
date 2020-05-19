@@ -1,0 +1,22 @@
+$color__dark: #35414a;
+$color__dark-sec: #86919a;
+$color__blue: #5aafee;
+$color__blue-sec: #3e9fe9;
+
+@font-face {
+  font-family: pfs-bold;
+  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/PFSquareSansPro-Bold.otf");
+}
+
+@mixin btn {
+  background-color: $color__blue;
+  padding: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background-color: $color__blue-sec;
+    transition: 200ms;
+  }
+}

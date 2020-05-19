@@ -1,0 +1,24 @@
+.splash-wrapper {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 2fr 1fr;
+  justify-items: center;
+  align-items: center;
+}
+
+.hero {
+  text-align: center;
+
+  &__headline {
+    font-size: 4rem;
+  }
+}
+
+.startup-container {
+  margin: 0 auto;
+  align-self: start;
+
+  &__btn {
+    @include btn;
+  }
+}
