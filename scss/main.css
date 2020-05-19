@@ -381,6 +381,65 @@
   transition: 200ms;
 }
 
+.exit {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: rgba(22, 36, 48, 0.493);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  top: 0;
+  left: 0;
+}
+
+.exit__wrapper {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 2em;
+  background: #35414a;
+}
+
+.exit__btn-cont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.exit__btn {
+  background-color: #5aafee;
+  padding: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  margin: 1em;
+}
+
+.exit__btn:hover, .exit__btn:focus {
+  background-color: #3e9fe9;
+  -webkit-transition: 200ms;
+  transition: 200ms;
+}
+
 @-webkit-keyframes progress {
   from {
     width: 100%;
@@ -407,6 +466,7 @@ body {
   background-color: #35414a;
   color: white;
   margin: 0 auto;
+  position: relative;
   display: inline;
   font-family: pfs-bold;
   text-transform: uppercase;

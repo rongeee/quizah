@@ -57,6 +57,39 @@
   }
 }
 
+.exit {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: rgba(22, 36, 48, 0.493);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+
+  &__wrapper {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+    background: $color__dark;
+  }
+
+  &__btn-cont {
+    display: flex;
+  }
+
+  &__btn {
+    @include btn;
+    text-decoration: none;
+    color: white;
+    margin: 1em;
+  }
+}
+
 @keyframes progress {
   from {
     width: 100%;

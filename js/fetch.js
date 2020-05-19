@@ -85,71 +85,77 @@ const shuffleAnswers = (q) => {
 };
 
 const renderQuestion = (i) => {
-  const answerCont = document.querySelector(".quiz__answers");
-  const pointsText = document.querySelector(".quiz__points");
-  const questionNum = document.querySelector(".quiz__question-nr");
-  const categoryText = document.querySelector(".quiz__category");
-  const questionText = document.querySelector(".quiz__question-text");
-  const answers = shuffleAnswers(game.questions[i]);
-  const correct = convertHTML(game.questions[i].correct_answer);
-  const currQue = convertHTML(game.questions[i].question);
-  const bar = document.querySelector(".quiz__time");
-  let clicked = false;
-  let timer = 10;
-  let currentQuestion = i;
+  if (i < 10) {
+    const answerCont = document.querySelector(".quiz__answers");
+    const pointsText = document.querySelector(".quiz__points");
+    const questionNum = document.querySelector(".quiz__question-nr");
+    const categoryText = document.querySelector(".quiz__category");
+    const questionText = document.querySelector(".quiz__question-text");
+    const answers = shuffleAnswers(game.questions[i]);
+    const correct = convertHTML(game.questions[i].correct_answer);
+    const currQue = convertHTML(game.questions[i].question);
+    const bar = document.querySelector(".quiz__time");
+    let clicked = false;
+    let timer = 10;
+    let currentQuestion = i;
 
-  answerCont.innerHTML = "";
-  categoryText.innerHTML = "";
-  questionText.innerHTML = "";
-  categoryText.textContent = game.questions[i].category;
-  questionText.textContent = currQue;
-  bar.classList.add("quiz__time--anim");
-  questionNum.innerHTML = `${i + 1} / 10`;
-  answers.forEach((answer) => {
-    answerCont.innerHTML += `<button class="quiz__answer" id="1">${answer}</button>`;
-  });
-  currentQuestion++;
+    answerCont.innerHTML = "";
+    categoryText.innerHTML = "";
+    questionText.innerHTML = "";
+    categoryText.textContent = game.questions[i].category;
+    questionText.textContent = currQue;
+    bar.classList.add("quiz__time--anim");
+    questionNum.innerHTML = `${i + 1} / 10`;
+    answers.forEach((answer) => {
+      answerCont.innerHTML += `<button class="quiz__answer" id="1">${answer}</button>`;
+    });
+    currentQuestion++;
 
-  const answerBtns = document.querySelectorAll(".quiz__answer");
-  answerBtns.forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      if (clicked === false) {
-        clicked = true;
+    const answerBtns = document.querySelectorAll(".quiz__answer");
+    answerBtns.forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        if (clicked === false) {
+          clicked = true;
+          bar.classList.remove("quiz__time--anim");
+          showAnswers(answerBtns, correct);
+
+          if (e.target.textContent === correct) {
+            game.points += updatePoints(game.difficulty, timer);
+            pointsText.innerHTML = `${game.points} points`;
+          }
+
+          clearInterval(quizTimer);
+          setTimeout(() => {
+            void bar.offsetWidth;
+            renderQuestion(currentQuestion);
+          }, 2000);
+        }
+      });
+    });
+
+    quizTimer = setInterval(() => {
+      timer--;
+
+      if (timer === 0) {
+        clearInterval(quizTimer);
         bar.classList.remove("quiz__time--anim");
         showAnswers(answerBtns, correct);
 
-        if (e.target.textContent === correct) {
-          game.points += updatePoints(game.difficulty, timer);
-          pointsText.innerHTML = `${game.points} points`;
-        }
-
-        clearInterval(quizTimer);
         setTimeout(() => {
           void bar.offsetWidth;
           renderQuestion(currentQuestion);
         }, 2000);
       }
-    });
-  });
-
-  quizTimer = setInterval(() => {
-    timer--;
-
-    if (timer === 0) {
-      clearInterval(quizTimer);
-      bar.classList.remove("quiz__time--anim");
-      showAnswers(answerBtns, correct);
-
-      setTimeout(() => {
-        void bar.offsetWidth;
-        renderQuestion(currentQuestion);
-      }, 2000);
-    }
-  }, 1000);
+    }, 1000);
+  } else {
+    renderWin();
+  }
 };
 
 const showAnswers = (cont, corr) => {
+  console.log(corr);
   cont.forEach((ele) => {
+    console.log(ele.textContent);
     if (corr === ele.textContent) {
       ele.style.background = "green";
     } else {
@@ -205,6 +211,23 @@ const renderQuizTemplate = () => {
   renderQuestion(0);
 };
 
+const renderWin = () => {
+  const template = `
+  <div class="exit">
+  <div class="exit__wrapper">
+  <h3 class="exit__headline">Good Job ${game.name}!</h3>
+  <p class="exit__text">You got ${game.points} points.</p>
+  <div class="exit__btn-cont">
+  <a class="exit__btn" href="./setup.php">Play Again</a>
+  <a class="exit__btn" href="./highscore.php">High Score</a>
+  </div>
+  </div>
+  </div>
+`;
+
+  document.body.innerHTML += template;
+};
+
 const convertHTML = (str) => {
   const conversions = {
     "&amp;": "&",
@@ -213,10 +236,17 @@ const convertHTML = (str) => {
     "&quot;": '"',
     "&apos;": "'",
     "&#039;": "'",
+    "&RSQUO;": "'",
+    "&OUML;": "ö",
+    "&oacute;": "ó",
+    "&ntilde;": "ñ",
+    "&aacute;": "á",
+    "&Uuml;": "Ü",
+    "&uuml;": "ü",
   };
 
   return String(str).replace(
-    /&quot;|&amp;|&gt;|&lt;|&apos;|&#039;/gi,
+    /&quot;|&amp;|&gt;|&lt;|&apos;|&#039;|&OUML;|&RSQUO|&ntilde;|&aacute;|&Uuml;|&uuml;/gi,
     (find) => conversions[find]
   );
 };
