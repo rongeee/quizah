@@ -35,6 +35,8 @@
   padding: 1em;
   border-radius: 5px;
   cursor: pointer;
+  text-decoration: none;
+  color: white;
 }
 
 .startup-container__btn:hover, .startup-container__btn:focus {

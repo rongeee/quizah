@@ -20,5 +20,7 @@
 
   &__btn {
     @include btn;
+    text-decoration: none;
+    color: white;
   }
 }
