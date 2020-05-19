@@ -245,4 +245,6 @@ const start = () => {
   }
 };
 
-// startBtn.addEventListener("click", () => {});
+startBtn.addEventListener("click", () => {
+  start();
+});
