@@ -416,6 +416,7 @@
           align-items: center;
   padding: 2em;
   background: #35414a;
+  border-radius: 7px;
 }
 
 .exit__btn-cont {
