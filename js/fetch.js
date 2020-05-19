@@ -215,7 +215,8 @@ const convertHTML = (str) => {
     "&apos;": "'",
     "&#039;": "'",
   };
-  return str.replaceAll(
+
+  return String(str).replace(
     /&quot;|&amp;|&gt;|&lt;|&apos;|&#039;/gi,
     (find) => conversions[find]
   );
