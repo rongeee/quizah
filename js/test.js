@@ -1,22 +1,11 @@
-window.transitionToPage = function (href) {
-  document.querySelector("body").style.opacity = 0;
-  setTimeout(function () {
-    window.location.href = href;
-  }, 500);
-};
+// class Quiz {
+//   constructor(name, difficulty) {
+//     this.name = name;
+//     this.difficulty = difficulty;
+//   }
 
-document.addEventListener("DOMContentLoaded", function (event) {
-  document.querySelector("body").style.opacity = 1;
-});
-
-class Quiz {
-  constructor(name, difficulty) {
-    this.name = name;
-    this.difficulty = difficulty;
-  }
-
-  getDifficulty(element) {
-    console.log(this.name);
-    console.log(this.difficulty);
-  }
-}
+//   getDifficulty(element) {
+//     console.log(this.name);
+//     console.log(this.difficulty);
+//   }
+// }

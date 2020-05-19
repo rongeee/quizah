@@ -16,10 +16,10 @@
         </h2>
       </div>
       <div class="startup-container">
-        <span
-          onclick="transitionToPage('./setup.php')"
+        <a
+          href="./setup.php"
           class="startup-container__btn"
-          >Let's Play!</span
+          >Let's Play!</a
         >
         <span
           onclick="transitionToPage('./score.php')"
