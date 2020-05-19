@@ -64,10 +64,6 @@ const renderHello = (name) => {
   }, 1000);
 };
 
-const getCorrectAnswer = (q) => {
-  return q.correct_answer;
-};
-
 const shuffleAnswers = (q) => {
   let answers = q.incorrect_answers.concat(q.correct_answer);
 
@@ -95,7 +91,7 @@ const renderQuestion = (i) => {
   const categoryText = document.querySelector(".quiz__category");
   const questionText = document.querySelector(".quiz__question-text");
   const answers = shuffleAnswers(game.questions[i]);
-  const correct = getCorrectAnswer(game.questions[i]);
+  const correct = convertHTML(game.questions[i].correct_answer);
   const currQue = convertHTML(game.questions[i].question);
   const bar = document.querySelector(".quiz__time");
   let clicked = false;
