@@ -154,8 +154,11 @@ const renderQuestion = (i) => {
 
 const showAnswers = (cont, corr) => {
   cont.forEach((ele) => {
-    ele.style.background = "red";
-    if (corr === ele.textContent) ele.style.background = "green";
+    if (corr === ele.textContent) {
+      ele.style.background = "green";
+    } else {
+      ele.style.background = "red";
+    }
   });
 };
 
