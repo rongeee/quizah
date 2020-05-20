@@ -4,15 +4,20 @@
 }
 
 .splash-wrapper {
-  height: 100vh;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: 2fr 1fr;
-      grid-template-rows: 2fr 1fr;
-  justify-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100vh;
 }
 
 .hero {
@@ -24,7 +29,7 @@
 }
 
 .startup-container {
-  margin: 0 auto;
+  margin-top: 2em;
   -ms-flex-item-align: start;
       -ms-grid-row-align: start;
       align-self: start;
@@ -37,6 +42,7 @@
   cursor: pointer;
   text-decoration: none;
   color: white;
+  margin: 1em;
 }
 
 .startup-container__btn:hover, .startup-container__btn:focus {
