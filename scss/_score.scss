@@ -14,6 +14,7 @@
     display: grid;
     gap: 1em;
     grid-auto-flow: column;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
   &__btn {
@@ -26,6 +27,10 @@
 
   &__name {
     justify-self: start;
+  }
+
+  &__difficulty {
+    justify-self: center;
   }
 
   &__points {

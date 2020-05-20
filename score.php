@@ -12,9 +12,9 @@
     <h2 class="highscore__headline">Leaderboards</h2>
     <div class="highscore__list-container">
     <div class="highscore__item">
-      <h4>Name</h4>
-      <h4>Difficulty</h4>
-      <h4>Points</h4>
+      <h4 class="highscore__name">Name</h4>
+      <h4 class="highscore__difficulty">Difficulty</h4>
+      <h4 class="highscore__points">Points</h4>
     </div>
     <?php require_once "./php/renderScore.php"; ?>
 </div>

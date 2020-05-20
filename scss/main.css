@@ -497,6 +497,8 @@
   display: grid;
   gap: 1em;
   grid-auto-flow: column;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
 }
 
 .highscore__btn {
@@ -519,6 +521,11 @@
 .highscore__name {
   -ms-grid-column-align: start;
       justify-self: start;
+}
+
+.highscore__difficulty {
+  -ms-grid-column-align: center;
+      justify-self: center;
 }
 
 .highscore__points {
