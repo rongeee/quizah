@@ -1,17 +1,13 @@
 <?php
 require_once "db.php";
 
-
-
-
-
 if (isset($_POST)) {
   $name = trim($_POST['name']);
   $difficulty = trim($_POST['difficulty']);
   $correct = trim($_POST['correct']);
   $points = trim($_POST['points']);
   
-  
+  try {
   $sql = "INSERT INTO quizah_highscore(name,difficulty,questions,points) VALUES(:name,:difficulty,:questions,:points);";
   $stmt = $pdo->prepare($sql);
   $stmt->execute([
@@ -20,11 +16,15 @@ if (isset($_POST)) {
     ':questions' => $correct,
     ':points' => $points,
     ]);
-  }
+  
 
 $sql = "SELECT points FROM quizah_highscore ORDER BY points DESC LIMIT 10";
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
+} catch (PDOException $e) {
+  echo $e->getMessage();
+}
+}
 
 $pointsLowest;
 $i = 0;
