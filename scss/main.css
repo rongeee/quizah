@@ -17,7 +17,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  min-height: 100vh;
+  height: 100vh;
 }
 
 .hero {
@@ -39,7 +39,7 @@
   cursor: pointer;
   text-decoration: none;
   color: white;
-  margin: 1em;
+  margin: 0.5em;
 }
 
 .startup-container__btn:hover, .startup-container__btn:focus {
