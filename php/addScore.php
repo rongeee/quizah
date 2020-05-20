@@ -5,17 +5,15 @@ require_once "db.php";
   try {
   $name = trim($_POST['name']);
   $difficulty = trim($_POST['difficulty']);
-  $correct = trim($_POST['correct']);
   $points = trim($_POST['points']);
   
   echo 'hallå???';
 
-  $sql = "INSERT INTO quizah_highscore(name,difficulty,questions,points) VALUES(:name,:difficulty,:questions,:points);";
+  $sql = "INSERT INTO quizah_highscore(name,difficulty,points) VALUES(:name,:difficulty,:points);";
   $stmt = $pdo->prepare($sql);
   $stmt->execute([
     ':name' => $name,
     ':difficulty' => $difficulty,
-    ':questions' => $correct,
     ':points' => $points,
     ]);
   
