@@ -30,7 +30,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 }
 
 if ($points > $pointsLowest || $count < 10) {
-  $test = '<p class="exit__text">Your highscore has been submitted!</p>';
+  $test = '<p class="exit__text">You made it to the leaderboards!</p>';
   echo $test;
 } else {
   $test = '<p class="exit__text">You did not make it to the leaderboards, try again!</p>';
