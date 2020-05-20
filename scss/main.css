@@ -565,8 +565,6 @@ body {
   position: relative;
   font-family: pfs-bold;
   text-transform: uppercase;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   height: 100%;
 }
 /*# sourceMappingURL=main.css.map */
