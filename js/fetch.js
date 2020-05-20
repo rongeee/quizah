@@ -262,7 +262,7 @@ const convertHTML = (str) => {
   };
 
   return String(str).replace(
-    /&quot;|&amp;|&gt;|&lt;|&apos;|&#039;|&OUML;|&RSQUO|&ntilde;|&aacute;|&Uuml;|&uuml|&Delta;/gi,
+    /&quot;|&amp;|&gt;|&lt;|&apos;|&#039;|&OUML;|&RSQUO|&ntilde;|&aacute;|&Uuml;|&uuml|&Delta;|&eacute;/gi,
     (find) => conversions[find]
   );
 };
