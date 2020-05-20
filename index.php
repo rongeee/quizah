@@ -12,8 +12,10 @@
       <div class="hero">
         <h1 class="hero__headline">Quizah!</h1>
         <h2 class="hero__desc">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+          Knowledge against time!
         </h2>
+        <p>The faster you are, the more points you get.</p>
+        <p>Harder question gets you more points</p>
       </div>
       <div class="startup-container">
         <a

@@ -1,9 +1,9 @@
 .splash-wrapper {
-  height: 100vh;
-  display: grid;
-  grid-template-rows: 2fr 1fr;
-  justify-items: center;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .hero {
@@ -15,12 +15,13 @@
 }
 
 .startup-container {
-  margin: 0 auto;
+  margin-top: 2em;
   align-self: start;
 
   &__btn {
     @include btn;
     text-decoration: none;
     color: white;
+    margin: 1em;
   }
 }

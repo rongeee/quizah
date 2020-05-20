@@ -258,6 +258,7 @@ const convertHTML = (str) => {
     "&Uuml;": "Ü",
     "&uuml;": "ü",
     "&Delta;": "Δ",
+    "&eacute;": "é",
   };
 
   return String(str).replace(
