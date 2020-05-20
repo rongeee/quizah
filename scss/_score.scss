@@ -4,7 +4,6 @@
   max-width: 90%;
   background-color: #86919a;
   padding-bottom: 1em;
-  height: 100vh;
   font-size: 1rem;
   display: flex;
   flex-direction: column;
@@ -17,7 +16,7 @@
   &__item {
     display: grid;
     gap: 1em;
-    ggrid-template-columns: minmax(50px, 90px) auto auto;
+    grid-template-columns: minmax(50px, 90px) auto auto;
     justify-self: center;
 
     &:nth-child(even) {
@@ -33,7 +32,6 @@
     margin-left: 1em;
     margin-right: 1em;
     text-align: center;
-    margin-bottom: 1em;
   }
 
   &__name {
@@ -47,5 +45,6 @@
 
   &__points {
     justify-self: end;
+    margin-right: 1em;
   }
 }

@@ -486,7 +486,6 @@
   max-width: 90%;
   background-color: #86919a;
   padding-bottom: 1em;
-  height: 100vh;
   font-size: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -506,7 +505,8 @@
   display: -ms-grid;
   display: grid;
   gap: 1em;
-  ggrid-template-columns: minmax(50px, 90px) auto auto;
+  -ms-grid-columns: minmax(50px, 90px) auto auto;
+      grid-template-columns: minmax(50px, 90px) auto auto;
   -ms-grid-column-align: center;
       justify-self: center;
 }
@@ -526,7 +526,6 @@
   margin-left: 1em;
   margin-right: 1em;
   text-align: center;
-  margin-bottom: 1em;
 }
 
 .highscore__btn:hover, .highscore__btn:focus {
@@ -549,6 +548,7 @@
 .highscore__points {
   -ms-grid-column-align: end;
       justify-self: end;
+  margin-right: 1em;
 }
 
 body {
