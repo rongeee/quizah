@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./scss/main.css" />
   </head>
   <body>
+  <div class="wrapper">
   <section class="highscore">
     <h2 class="highscore__headline">Leaderboards</h2>
     <div class="highscore__list-container">
@@ -24,5 +25,6 @@
           >Home</a
         >
   </section>
+</div>
   </body>
 </html>
