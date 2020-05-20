@@ -30,9 +30,6 @@
 
 .startup-container {
   margin-top: 2em;
-  -ms-flex-item-align: start;
-      -ms-grid-row-align: start;
-      align-self: start;
 }
 
 .startup-container__btn {
