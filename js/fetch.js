@@ -5,6 +5,7 @@ const startBtn = document.querySelector(".quiz-setup__submit");
 let questions;
 let game = {
   points: 0,
+  correct: 0,
 };
 let quizTimer;
 
@@ -121,6 +122,7 @@ const renderQuestion = (i) => {
 
           if (e.target.textContent === correct) {
             game.points += updatePoints(game.difficulty, timer);
+            game.correct++;
             pointsText.innerHTML = `${game.points} points`;
           }
 
@@ -149,11 +151,14 @@ const renderQuestion = (i) => {
     }, 1000);
   } else {
     renderWin();
+    game = {
+      points: 0,
+      correct: 0,
+    };
   }
 };
 
 const showAnswers = (cont, corr) => {
-  console.log(corr);
   cont.forEach((ele) => {
     console.log(ele.textContent);
     if (corr === ele.textContent) {
@@ -214,18 +219,25 @@ const renderQuizTemplate = () => {
 const renderWin = () => {
   const template = `
   <div class="exit">
-  <div class="exit__wrapper">
-  <h3 class="exit__headline">Good Job ${game.name}!</h3>
-  <p class="exit__text">You got ${game.points} points.</p>
-  <div class="exit__btn-cont">
-  <a class="exit__btn" href="./setup.php">Play Again</a>
-  <a class="exit__btn" href="./highscore.php">High Score</a>
-  </div>
-  </div>
+    <div class="exit__wrapper">
+      <h3 class="exit__headline">Good Job ${game.name}!</h3>
+      <p class="exit__text">You got ${game.points} points.</p>
+      <div class="exit__btn-cont">
+        <a class="exit__btn" href="./setup.php">Play Again</a>
+        <a class="exit__btn" href="./highscore.php">High Score</a>
+      </div>
+      <form name="scoreForm" id="scoreForm" method="POST">
+        <input type="hidden" name="name" value="${game.name}">
+        <input type="hidden" name="difficulty" value="${game.difficulty}">
+        <input type="hidden" name="points" value="${game.points}">
+        <input type="hidden" name="correct" value="${game.correct}">
+      </form>
+    </div>
   </div>
 `;
 
   document.body.innerHTML += template;
+  postResultsToDB();
 };
 
 const convertHTML = (str) => {
@@ -243,10 +255,11 @@ const convertHTML = (str) => {
     "&aacute;": "á",
     "&Uuml;": "Ü",
     "&uuml;": "ü",
+    "&Delta;": "Δ",
   };
 
   return String(str).replace(
-    /&quot;|&amp;|&gt;|&lt;|&apos;|&#039;|&OUML;|&RSQUO|&ntilde;|&aacute;|&Uuml;|&uuml;/gi,
+    /&quot;|&amp;|&gt;|&lt;|&apos;|&#039;|&OUML;|&RSQUO|&ntilde;|&aacute;|&Uuml;|&uuml|&Delta;/gi,
     (find) => conversions[find]
   );
 };
@@ -265,6 +278,26 @@ const fetchProducts = () => {
     })
     .catch((err) => {
       console.log(err);
+    });
+};
+
+const postResultsToDB = () => {
+  let myForm = document.getElementById("scoreForm");
+  const data = new URLSearchParams(new FormData(myForm));
+  //very simply, doesn't handle complete objects
+
+  console.log(data);
+  let request = new Request("./php/addScore.php", {
+    method: "POST",
+    body: data,
+  });
+
+  fetch(request)
+    .then((resp) => {
+      console.log(resp);
+    })
+    .catch(function (err) {
+      console.info(err);
     });
 };
 

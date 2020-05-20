@@ -92,6 +92,5 @@
       </form>
     </section>
   </body>
-  <script src="./js/test.js"></script>
   <script src="./js/fetch.js"></script>
 </html>
