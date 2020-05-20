@@ -12,7 +12,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
   $questions = $row['questions'];
   $difficulty = $row['difficulty'];
 
-  $template = '<div class="highscore__item"><p class="highscore__name">'  . $count . '. ' . $name . '</p>' . '<p class="highscore__diff">' . $difficulty . '</p>' . '<p class="highscore__points">' . $points . '</p></div>';
+  $template = '<div class="highscore__item"><p class="highscore__name">'  . $count . '. ' . $name . '</p>' . '<p class="highscore__difficulty">' . $difficulty . '</p>' . '<p class="highscore__points">' . $points . '</p></div>';
   echo $template;
   $count++;
 }
