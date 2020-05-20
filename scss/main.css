@@ -481,9 +481,12 @@
 }
 
 .highscore {
-  margin: 0 auto;
+  margin: 1.5em auto;
+  border-radius: 10px;
+  max-width: 90%;
+  background-color: #86919a;
+  padding-bottom: 1em;
   height: 100vh;
-  padding: 3em;
   font-size: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -495,13 +498,21 @@
   max-width: 700px;
 }
 
+.highscore__headline {
+  margin: 0.5em 0 0 0.5em;
+}
+
 .highscore__item {
   display: -ms-grid;
   display: grid;
   gap: 1em;
-  grid-auto-flow: column;
-  -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
+  ggrid-template-columns: minmax(50px, 90px) auto auto;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.highscore__item:nth-child(even) {
+  background-color: #73d0f440;
 }
 
 .highscore__btn {
@@ -511,8 +522,11 @@
   cursor: pointer;
   text-decoration: none;
   color: white;
-  margin: 1em;
   text-align: center;
+  margin-left: 1em;
+  margin-right: 1em;
+  text-align: center;
+  margin-bottom: 1em;
 }
 
 .highscore__btn:hover, .highscore__btn:focus {
@@ -524,11 +538,12 @@
 .highscore__name {
   -ms-grid-column-align: start;
       justify-self: start;
+  margin-left: 1em;
 }
 
 .highscore__difficulty {
-  -ms-grid-column-align: center;
-      justify-self: center;
+  -ms-grid-column-align: end;
+      justify-self: end;
 }
 
 .highscore__points {
