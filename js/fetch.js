@@ -226,7 +226,7 @@ const renderWin = () => {
       </div>
       <div class="exit__btn-cont">
         <a class="exit__btn" href="./setup.php">Play Again</a>
-        <a class="exit__btn" href="./highscore.php">High Score</a>
+        <a class="exit__btn" href="./score.php">High Score</a>
       </div>
       <form name="scoreForm" id="scoreForm" method="POST">
         <input type="hidden" name="name" value="${game.name}">

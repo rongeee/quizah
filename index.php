@@ -21,10 +21,10 @@
           class="startup-container__btn"
           >Let's Play!</a
         >
-        <span
-          onclick="transitionToPage('./score.php')"
+        <a
+        href="./score.php.php"
           class="startup-container__btn"
-          >High Score</span
+          >High Score</a
         >
       </div>
     </section>

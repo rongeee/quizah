@@ -3,6 +3,7 @@
 @import "setup";
 @import "hello";
 @import "quiz";
+@import "score";
 
 body {
   background-color: $color__dark;
@@ -14,5 +15,6 @@ body {
   font-family: pfs-bold;
   text-transform: uppercase;
   box-sizing: border-box;
+  height: 100vh;
   max-height: 100vh;
 }
