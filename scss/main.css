@@ -483,7 +483,6 @@
 .highscore {
   margin: 1.5em auto;
   border-radius: 10px;
-  max-width: 90%;
   background-color: #86919a;
   padding-bottom: 1em;
   font-size: 1rem;
@@ -494,6 +493,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  width: 100%;
 }
 
 .highscore__headline {
@@ -561,8 +561,8 @@
       -ms-flex-align: center;
           align-items: center;
   max-width: 700px;
-  width: 85%;
-  padding: 1.5em;
+  margin: 0 auto;
+  height: 100%;
 }
 
 body {
