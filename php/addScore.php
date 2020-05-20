@@ -21,9 +21,11 @@ $sql = "SELECT points FROM quizah_highscore ORDER BY points DESC LIMIT 10";
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
 
-  $test = '<p class="exit__text">Your highscore has been submitted!</p>';
-  echo $test;
+$count = $stmt->rowCount();
+  // $test = '<p class="exit__text">Your highscore has been submitted!</p>';
+  // echo $test;
 
+  echo 'Rowcount: ' . $count
 
 // $pointsLowest;
 
