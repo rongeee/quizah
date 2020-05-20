@@ -12,7 +12,7 @@ if (isset($_POST)) {
   $points = trim($_POST['points']);
   
   
-  $sql = "INSERT INTO highscore(name,difficulty,questions,points) VALUES(:name,:difficulty,:questions,:points);";
+  $sql = "INSERT INTO quizah_highscore(name,difficulty,questions,points) VALUES(:name,:difficulty,:questions,:points);";
   $stmt = $pdo->prepare($sql);
   $stmt->execute([
     ':name' => $name,
