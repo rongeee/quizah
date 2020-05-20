@@ -333,7 +333,7 @@
 
 .quiz__question-text {
   text-align: center;
-  letter-spacing: 1px;
+  text-transform: none;
 }
 
 .quiz__time {
@@ -466,7 +466,8 @@
 body {
   background-color: #35414a;
   color: white;
-  margin: 0 auto;
+  margin: 0;
+  padding: 0;
   position: relative;
   display: inline;
   font-family: pfs-bold;
