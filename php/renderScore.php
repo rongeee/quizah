@@ -1,7 +1,7 @@
 <?php
   require_once "db.php";
 
-$sql = "SELECT * FROM highscore ORDER BY points DESC LIMIT 10";
+$sql = "SELECT * FROM quizah_highscore ORDER BY points DESC LIMIT 10";
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
 

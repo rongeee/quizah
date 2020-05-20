@@ -22,7 +22,7 @@ if (isset($_POST)) {
     ]);
   }
 
-$sql = "SELECT points FROM highscore ORDER BY points DESC LIMIT 10";
+$sql = "SELECT points FROM quizah_highscore ORDER BY points DESC LIMIT 10";
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
 

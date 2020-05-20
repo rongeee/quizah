@@ -1,9 +1,9 @@
 <?php
 
 $db_server = "localhost";
-$db_database = "quizah";
-$db_username = "root";
-$db_password = 'root';
+$db_database = "tehvogww_ron";
+$db_username = "tehvogww_ron";
+$db_password = 'QvNds6JTjQhPt3P';
 
 $dsn = "mysql:host=$db_server;dbname=$db_database;charset=utf8";
 try {
