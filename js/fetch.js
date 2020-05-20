@@ -220,8 +220,10 @@ const renderWin = () => {
   const template = `
   <div class="exit">
     <div class="exit__wrapper">
-      <h3 class="exit__headline">Good Job ${game.name}!</h3>
-      <p class="exit__text">You got ${game.points} points.</p>
+      <div class="exit__text-container">
+        <h3 class="exit__headline">Good Job ${game.name}!</h3>
+        <p class="exit__text">You got ${game.points} points.</p>
+      </div>
       <div class="exit__btn-cont">
         <a class="exit__btn" href="./setup.php">Play Again</a>
         <a class="exit__btn" href="./highscore.php">High Score</a>
@@ -282,21 +284,21 @@ const fetchProducts = () => {
 };
 
 const postResultsToDB = () => {
-  let myForm = document.getElementById("scoreForm");
+  const myForm = document.getElementById("scoreForm");
+  const scoreCont = document.querySelector(".exit__text-container");
   const data = new URLSearchParams(new FormData(myForm));
-  //very simply, doesn't handle complete objects
 
-  console.log(data);
   let request = new Request("./php/addScore.php", {
     method: "POST",
     body: data,
   });
 
   fetch(request)
-    .then((resp) => {
-      console.log(resp);
+    .then((response) => response.text())
+    .then((text) => {
+      scoreCont.innerHTML += text;
     })
-    .catch(function (err) {
+    .catch((err) => {
       console.info(err);
     });
 };
