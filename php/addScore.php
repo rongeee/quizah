@@ -1,7 +1,8 @@
 <?php
 require_once "db.php";
 
-if (isset($_POST)) {
+// if (isset($_POST)) {
+  try {
   $name = trim($_POST['name']);
   $difficulty = trim($_POST['difficulty']);
   $correct = trim($_POST['correct']);
@@ -9,7 +10,6 @@ if (isset($_POST)) {
   
   echo 'hallå???';
 
-  try {
   $sql = "INSERT INTO quizah_highscore(name,difficulty,questions,points) VALUES(:name,:difficulty,:questions,:points);";
   $stmt = $pdo->prepare($sql);
   $stmt->execute([
@@ -27,7 +27,7 @@ $stmt->execute();
   echo $e->getMessage();
   echo 'hejhejhejhjehje';
 }
-}
+// }
 
 
 $pointsLowest;
