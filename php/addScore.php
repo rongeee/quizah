@@ -27,11 +27,13 @@ $stmt = $pdo->prepare($sql);
 $stmt->execute();
 
 $pointsLowest;
+$i = 0;
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+  $i++
   $pointsLowest = $row['points'];
 }
 
-  if ($points > $pointsLowest) {
+  if ($points > $pointsLowest || $i < 10) {
     $test = '<p class="exit__text">Your highscore has been submitted!</p>';
     echo $test;
   } else {
