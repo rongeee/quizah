@@ -22,7 +22,7 @@
           >Let's Play!</a
         >
         <a
-        href="./score.php.php"
+        href="./score.php"
           class="startup-container__btn"
           >High Score</a
         >
