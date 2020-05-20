@@ -2,7 +2,7 @@
 require_once "db.php";
 
 // if (isset($_POST)) {
-  try {
+
   $name = trim($_POST['name']);
   $difficulty = trim($_POST['difficulty']);
   $points = trim($_POST['points']);
@@ -21,27 +21,22 @@ require_once "db.php";
 $sql = "SELECT points FROM quizah_highscore ORDER BY points DESC LIMIT 10";
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
-} catch (PDOException $e) {
-  echo $e->getMessage();
-  echo 'hejhejhejhjehje';
-}
+
+
+// $pointsLowest;
+
+// while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+//   $i++
+//   $pointsLowest = $row['points'];
 // }
 
-
-$pointsLowest;
-
-while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-  $i++
-  $pointsLowest = $row['points'];
-}
-
-  if ($points > $pointsLowest) {
-    $test = '<p class="exit__text">Your highscore has been submitted!</p>';
-    echo $test;
-  } else {
-    $test = '<p class="exit__text">You did not make the leaderboards :(</p>';
-    echo $test;
-  }
+//   if ($points > $pointsLowest) {
+//     $test = '<p class="exit__text">Your highscore has been submitted!</p>';
+//     echo $test;
+//   } else {
+//     $test = '<p class="exit__text">You did not make the leaderboards :(</p>';
+//     echo $test;
+//   }
   
 
 
