@@ -577,6 +577,6 @@ body {
   text-transform: uppercase;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  height: 100vh;
+  height: 100%;
 }
 /*# sourceMappingURL=main.css.map */
