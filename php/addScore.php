@@ -7,6 +7,8 @@ if (isset($_POST)) {
   $correct = trim($_POST['correct']);
   $points = trim($_POST['points']);
   
+  echo 'hallå???';
+
   try {
   $sql = "INSERT INTO quizah_highscore(name,difficulty,questions,points) VALUES(:name,:difficulty,:questions,:points);";
   $stmt = $pdo->prepare($sql);
@@ -23,6 +25,7 @@ $stmt = $pdo->prepare($sql);
 $stmt->execute();
 } catch (PDOException $e) {
   echo $e->getMessage();
+  echo 'hejhejhejhjehje';
 }
 }
 
