@@ -22,17 +22,20 @@ $stmt = $pdo->prepare($sql);
 $stmt->execute();
 
 $count = $stmt->rowCount();
-  // $test = '<p class="exit__text">Your highscore has been submitted!</p>';
-  // echo $test;
 
-  echo 'Rowcount: ' . $count
+$pointsLowest;
 
-// $pointsLowest;
+while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+  $pointsLowest = $row['points'];
+}
 
-// while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-//   $i++
-//   $pointsLowest = $row['points'];
-// }
+if ($points > $pointsLowest || $count < 10) {
+  $test = '<p class="exit__text">Your highscore has been submitted!</p>';
+  echo $test;
+} else {
+  $test = '<p class="exit__text">You did not make it to the leaderboards, try again!</p>';
+  echo $test;
+}
 
 //   if ($points > $pointsLowest) {
 
