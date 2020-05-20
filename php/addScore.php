@@ -7,7 +7,6 @@ require_once "db.php";
   $difficulty = trim($_POST['difficulty']);
   $points = trim($_POST['points']);
   
-  echo 'hallå???';
 
   $sql = "INSERT INTO quizah_highscore(name,difficulty,points) VALUES(:name,:difficulty,:points);";
   $stmt = $pdo->prepare($sql);
@@ -22,6 +21,9 @@ $sql = "SELECT points FROM quizah_highscore ORDER BY points DESC LIMIT 10";
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
 
+  $test = '<p class="exit__text">Your highscore has been submitted!</p>';
+  echo $test;
+
 
 // $pointsLowest;
 
@@ -31,8 +33,7 @@ $stmt->execute();
 // }
 
 //   if ($points > $pointsLowest) {
-//     $test = '<p class="exit__text">Your highscore has been submitted!</p>';
-//     echo $test;
+
 //   } else {
 //     $test = '<p class="exit__text">You did not make the leaderboards :(</p>';
 //     echo $test;
