@@ -19,7 +19,7 @@
       </div>
       <div class="startup-container">
         <a
-          href="./setup.php"
+          href="./quiz.php"
           class="startup-container__btn"
           >Let's Play!</a
         >
