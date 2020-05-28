@@ -61,6 +61,7 @@
   background-color: #5aafee;
   padding: 1em;
   border-radius: 5px;
+  outline: none;
   cursor: pointer;
   text-decoration: none;
   color: white;
@@ -159,6 +160,7 @@
   background-color: #5aafee;
   padding: 1em;
   border-radius: 5px;
+  outline: none;
   cursor: pointer;
   font-family: inherit;
   /* 1 */
@@ -412,6 +414,7 @@
   background-color: #5aafee;
   padding: 1em;
   border-radius: 5px;
+  outline: none;
   cursor: pointer;
   font-family: inherit;
   /* 1 */
@@ -498,6 +501,7 @@
   background-color: #5aafee;
   padding: 1em;
   border-radius: 5px;
+  outline: none;
   cursor: pointer;
   text-decoration: none;
   color: white;
@@ -577,6 +581,7 @@
   background-color: #5aafee;
   padding: 1em;
   border-radius: 5px;
+  outline: none;
   cursor: pointer;
   text-decoration: none;
   color: white;
