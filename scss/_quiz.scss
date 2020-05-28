@@ -92,9 +92,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 2em;
+    padding: 1em;
     background: $color__dark;
     border-radius: 7px;
+    text-align: center;
   }
 
   &__btn-cont {
