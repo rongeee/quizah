@@ -49,6 +49,7 @@ const renderHello = (name) => {
     </section>`;
 
   document.body.innerHTML = template;
+  const helloCont = document.querySelector(".hello");
   const timeElement = document.querySelector(".hello__timer");
 
   let countdownTimer = setInterval(() => {
@@ -87,6 +88,7 @@ const shuffleAnswers = (q) => {
 
 const renderQuestion = (i) => {
   if (i < 10) {
+    const quizCont = document.querySelector(".quiz__question-wrapper");
     const answerCont = document.querySelector(".quiz__answers");
     const pointsText = document.querySelector(".quiz__points");
     const questionNum = document.querySelector(".quiz__question-nr");
@@ -125,7 +127,6 @@ const renderQuestion = (i) => {
             game.correct++;
             pointsText.innerHTML = `${game.points} points`;
           }
-
           clearInterval(quizTimer);
           setTimeout(() => {
             void bar.offsetWidth;
@@ -199,15 +200,17 @@ const renderQuizTemplate = () => {
   const template = `<section class="quiz">
   <div class="quiz__top">
   <p class="quiz__points">0 p</p>
-  <h4 class="quiz__category"></h4>
   <p class="quiz__question-nr"></p>
   </div>
-  
+  <div class="quiz__question-wrapper">
   <div class="quiz__question">
   <h3 class="quiz__question-text"></h3>
   </div>
+  
+  <h4 class="quiz__category"></h4>
   <span class="quiz__time"></span>
   <div class="quiz__answers">
+  </div>
   </div>
   </section>`;
 

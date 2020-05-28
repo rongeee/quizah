@@ -20,3 +20,12 @@ $color__blue-sec: #3e9fe9;
     transition: 200ms;
   }
 }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

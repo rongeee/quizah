@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./scss/main.css" />
   </head>
   <body>
-    <section class="quiz-setup">
+    <section class="quiz-setup" id="test">
       <form action="#" class="quiz-setup__form" method="POST" name="setup">
         <h2 class="quiz-setup__headline">Setup your Quiz!</h2>
         <div>
